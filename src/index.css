@@ -1,0 +1,110 @@
+:root {
+  --main-color: green;
+  --second-color: #3ff82499;
+  --second-color-o: rgb(162, 255, 162);
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px white; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 7px var(--main-color); 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-title,.second-title {
+  position: relative;
+  padding: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 40px
+}
+.second-title{
+  text-align: left;
+}
+
+.main-title::after ,
+.second-title::after{
+  content: "";
+  width: 20%;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  margin: 5px auto;
+}
+.second-title::after{
+  left: 10px;
+  transform: translateX(0);
+}
+.main-title::before,
+.second-title::before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -7.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 2px solid var(--main-color);
+  z-index: 10;
+  margin: 5px auto;
+}
+.second-title::before{
+  left: 10px;
+  transform: translateX(0);
+}
+
+
+.main-img {
+  --color: var(--main-color);
+  /* the border color */
+  --border: 10px;
+  /* the border thickness*/
+  --offset: 20px;
+  /* control the offset*/
+  --gap: 5px;
+  /* the gap on hover */
+
+  --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)), var(--color) 0;
+  --_o: calc(3*var(--offset));
+  padding:
+    calc(var(--gap) + var(--border)) calc(var(--gap) + var(--border) + var(--offset)) calc(var(--gap) + var(--border) + var(--offset)) calc(var(--gap) + var(--border));
+  background:
+    linear-gradient(var(--_c)) var(--_o) var(--_o),
+    linear-gradient(90deg, var(--_c)) var(--_o) var(--_o);
+  background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
+  background-repeat: no-repeat;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.main-img:hover {
+  background-position: 0px 0px;
+  background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
+}

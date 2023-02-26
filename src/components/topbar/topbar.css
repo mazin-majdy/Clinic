@@ -1,0 +1,108 @@
+.navbar {
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 30px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  flex: 3;
+}
+
+.navbar .logo img {
+  width: 90px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.navbar .links {
+  flex: 10;
+}
+
+.navbar .links ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .links ul li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+  padding: 7px;
+}
+
+.navbar .links a::after,
+.navbar .links a::before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: var(--main-color);
+  transition: 0.3s;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.navbar .links a::after {
+  top: 0;
+  left: 0;
+}
+
+.navbar .links a::before {
+  bottom: 0;
+  right: 0;
+}
+
+.navbar .links a:hover::after,
+.navbar .links a:hover::before {
+  width: 100%;
+  opacity: 1;
+}
+
+.navbar .drop {
+  position: relative;
+}
+
+.navbar .drop .box {
+  top: 35px;
+  left: -60px;
+  display: none;
+  position: absolute;
+  background-color: #EEE;
+  width: 240px;
+  border-radius: 10px;
+  border-bottom: 5px solid var(--main-color);
+}
+
+.navbar .drop .box ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.navbar .drop .box ul li {
+  padding: 15px 0;
+}
+
+.navbar .drop .box ul li:not(:last-of-type) {
+  border-bottom: 1px solid #CCC;
+}
+
+.navbar .drop .box ul li a {
+  color: #444;
+  font-size: 14px;
+
+}
+
+.navbar .drop .box.active {
+  display: block;
+}
