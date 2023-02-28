@@ -1,8 +1,9 @@
-.servicesDetails{
+.servicesDetails {
   padding: 0 100px;
   height: 100vh;
   position: relative;
 }
+
 .servicesDetails::before {
   content: "";
   position: absolute;
@@ -15,14 +16,17 @@
   transform: skewY(-6deg);
   transform-origin: top left;
 }
-.servicesDetailsContainer{
+
+.servicesDetailsContainer {
   padding: 100px 50px;
 }
-.servicesDetailsContainer .text h1{
+
+.servicesDetailsContainer .text h1 {
   color: #333;
   margin-bottom: 10px;
 }
-.servicesDetailsContainer .text p{
+
+.servicesDetailsContainer .text p {
   color: #444;
   line-height: 1.7;
   padding-left: 60px;
@@ -30,11 +34,12 @@
 }
 
 
-.servicesDetailsContainer .button{
+.servicesDetailsContainer .button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .glow-on-hover {
   width: 140px;
   height: 40px;
@@ -56,7 +61,7 @@
   background: linear-gradient(45deg, var(--main-color), #fffb00, #48ff00, var(--second-color));
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -93,29 +98,53 @@
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 
-.trainingPrograms{
+.trainingPrograms {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   padding: 60px;
-  background-image: linear-gradient(to top, var(--second-color) , white);
+  background-image: linear-gradient(to top, var(--second-color), white);
   border-radius: 70px;
   margin-top: 50px;
 }
-.trainingPrograms .title{
+
+.trainingPrograms .title {
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
-.trainingPrograms .text{
+
+.trainingPrograms .text {
   color: #444;
   line-height: 1.5;
   padding-left: 30px;
   font-size: 16px;
   margin-bottom: 10px;
+}
+@media (max-width: 992px) {
+  .servicesDetails{
+    padding: 0 10px;
+  }
+  .servicesDetailsContainer{
+    padding: 50px 20px;
+  }
+  .trainingPrograms{
+    padding: 20px;
+  }
+  .servicesDetailsContainer .text p {
+    padding-left: 30px;
+  }
 }

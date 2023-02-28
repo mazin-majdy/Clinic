@@ -1,0 +1,33 @@
+.contact{
+  height: 80vh;
+  padding-top: 100px;
+  background-image: linear-gradient(to bottom, var(--second-color-o), white, white, white, white, white);
+  align-items: center;
+
+}
+.contact .content{
+  text-align: center;
+  padding: 15px;
+  margin-top: 70px;
+}
+.contact .content .text{
+  display: flex;
+  flex-direction: column;
+}
+.contact .content .text h3{
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #FFF;
+}
+.contact .content .text .contact-row{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  gap: 10px;
+}
+.contact-row svg{
+  color: var(--main-color);
+}
+.contact-row p{
+  font-weight: 500;
+}

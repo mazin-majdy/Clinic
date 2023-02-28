@@ -4,12 +4,18 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { useState } from "react";
 import Slide from 'react-reveal/Slide';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const TopBar = () => {
   const [open, setOpen] = useState(false);
+  const [barOpen, setBarOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
     setOpen(!open)
+  }
+  const barClick = () => {
+    setBarOpen(!barOpen)
+    console.log(barOpen)
   }
   return (
     <div className='navbar'>
@@ -18,27 +24,32 @@ const TopBar = () => {
           <img src="/assets/logo.png" alt="Logo" />
         </div>
         <div className="links">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><a href="/#about">About Us</a></li>
-            <li><a href="/#services">Our Services</a></li>
-            <li><a href="/#team">Our Team</a></li>
-            <div className="drop">
+          <Slide top>
+            <ul id="ul" className={barOpen ? "open" : null}>
+              <li><Link to="/">Home</Link></li>
+              <li><a href="/#about">About Us</a></li>
+              <li><a href="/#services">Our Services</a></li>
+              <li><a href="/#team">Our Team</a></li>
+              <div className="drop">
 
-              <li><a href="" onClick={handleClick}>Resources{open ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}</a></li>
-              <Slide top>
-                <div className={"box " + (open ? "active" : null)}>
-                  <ul>
-                    <li><a href="#">Frequently Asked Questions</a></li>
-                    <li><a href="#">Links</a></li>
-                    <li><a href="#">Videos</a></li>
-                  </ul>
-                </div>
-              </Slide>
-            </div>
+                <li><a href="" onClick={handleClick}>Resources{open ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}</a></li>
+                <Slide top>
+                  <div className={"box " + (open ? "active" : null)}>
+                    <ul>
+                      <li><a href="#">Frequently Asked Questions</a></li>
+                      <li><a href="#">Links</a></li>
+                      <li><a href="#">Videos</a></li>
+                    </ul>
+                  </div>
+                </Slide>
+              </div>
 
-            <li><a href="/#contact">Contact</a></li>
-          </ul>
+              <li><a href="/#contact">Contact</a></li>
+            </ul>
+          </Slide>
+        </div>
+        <div className="barIcon" onClick={barClick}>
+          <MenuIcon sx={{ fontSize: 40 }} />
         </div>
       </div>
     </div>
