@@ -3,6 +3,8 @@
   width: 100%;
   border-bottom: 1px solid #CCC;
   padding-bottom: 30px;
+  background-color: transparent;
+  z-index: 10;
 }
 
 .navbar .container {
@@ -11,24 +13,16 @@
   align-items: center;
 }
 
-/* .navbar .logo {
-  flex: 3;
-} */
-
 .navbar .logo img {
   width: 90px;
   height: 80px;
   object-fit: cover;
 }
 
-/* .navbar .links {
-  flex: 10;
-} */
-
 .navbar .links #ul {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  gap: 30px;
 }
 
 .navbar .links ul li a {
@@ -38,6 +32,12 @@
   font-size: 18px;
   position: relative;
   padding: 7px;
+  cursor: pointer;
+}
+.navbar .links a.active::after,
+.navbar .links a.active::before{
+  width: 100%;
+  opacity: 1;
 }
 
 .navbar .links a::after,
@@ -77,11 +77,11 @@
   left: -60px;
   display: none;
   position: absolute;
-  background-color: #EEE;
+  background-color: #f4f4f4;
   width: 240px;
   border-radius: 10px;
   border-bottom: 5px solid var(--main-color);
-  z-index: 10;
+  z-index: 10000;
 }
 
 .navbar .drop .box ul {
@@ -116,7 +116,7 @@
   position: relative;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .navbar .barIcon {
     display: block;
   }

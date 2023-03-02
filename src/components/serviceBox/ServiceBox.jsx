@@ -2,16 +2,23 @@ import "../services/services.css";
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import { serviceText } from "../../data";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const ServicesBox = () => {
-  const [last, setLast] = useState(false);
-
+  const navigate = useNavigate();
   if (serviceText.length - 1 % 2 !== 0) {
-    // serviceText[serviceText.length-1].className = "mazin";
     serviceText[serviceText.length - 1].class = "last";
 
+  }
+
+  const topRef = useRef(null);
+
+  const handleClick = () => {
+    topRef.current.scrollIntoView({ behavior: 'smooth' });
+    // navigate to second page
+    
   }
   return (
     serviceText.map((ele, index) => {
@@ -22,7 +29,7 @@ const ServicesBox = () => {
           </div>
           <h3>{ele.title}</h3>
           <div className="info">
-            <Link to={`/service/${ele.id}`}>Details</Link>
+            <Link to={`/service/${ele.id}`} onClick={handleClick}>Details</Link>
           </div>
         </div>
       )

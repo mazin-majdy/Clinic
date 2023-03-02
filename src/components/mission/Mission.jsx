@@ -4,7 +4,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 import Reveal from 'react-reveal/Reveal';
-import Roll from 'react-reveal/Roll';
+import Fade from 'react-reveal/Fade';
 
 
 const Mission = () => {
@@ -16,7 +16,7 @@ const Mission = () => {
         <div className="container">
 
           <div className="boxes">
-            <Roll left>
+            <Fade left>
 
               <div className="box">
                 <div className="icon">
@@ -29,9 +29,9 @@ const Mission = () => {
                   </p>
                 </div>
               </div>
-            </Roll>
+            </Fade>
 
-            <Roll left>
+            <Fade left>
               <div className="box">
                 <div className="icon">
                   <VisibilityIcon sx={{ fontSize: 30 }} />
@@ -43,9 +43,9 @@ const Mission = () => {
                   </p>
                 </div>
               </div>
-            </Roll>
+            </Fade>
 
-            <Roll left>
+            <Fade left>
 
               <div className="box">
                 <div className="icon">
@@ -59,14 +59,14 @@ const Mission = () => {
                 </div>
               </div>
 
-            </Roll>
+            </Fade>
 
 
           </div>
             <div className="image">
-          <Roll right>
+          <Fade right>
               <img src="/assets/mission.jpg" alt="" className="main-img" />
-          </Roll>
+          </Fade>
             </div>
 
         </div>

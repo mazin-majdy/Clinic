@@ -5,14 +5,26 @@ import { serviceText } from "../../data";
 import { trainingPrograms } from "../../data";
 import TrainingPrograms from "../trainingPrograms/TrainingPrograms";
 import Slide from 'react-reveal/Slide';
+import { useNavigate } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 const ServiceDetails = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(-1);
+  }
   const param = useParams();
   const { title, text } = serviceText[param.id - 1]
 
-  console.log(param.id)
+
+  const topRef = useRef(null);
+
+  useEffect(() => {
+    topRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
   return (
-    <div className="servicesDetails">
+    <div className="servicesDetails" ref={topRef}>
       <Navbar />
       <Slide left>
         <div className="servicesDetailsContainer">
@@ -34,9 +46,7 @@ const ServiceDetails = () => {
           }
           <div className="button">
 
-            <Link to="/">
-              <button className="glow-on-hover" type="button">Back</button>
-            </Link>
+            <button className="glow-on-hover" type="button" onClick={handleClick}>Back</button>
           </div>
         </div>
       </Slide>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./topbar.css";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
@@ -6,7 +5,10 @@ import { useState } from "react";
 import Slide from 'react-reveal/Slide';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import { Link as Page, NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 const TopBar = () => {
+
   const [open, setOpen] = useState(false);
   const [barOpen, setBarOpen] = useState(false);
   const handleClick = (e) => {
@@ -17,6 +19,7 @@ const TopBar = () => {
     setBarOpen(!barOpen)
     console.log(barOpen)
   }
+
   return (
     <div className='navbar'>
       <div className="container">
@@ -26,10 +29,12 @@ const TopBar = () => {
         <div className="links">
           <Slide top>
             <ul id="ul" className={barOpen ? "open" : null}>
-              <li><Link to="/">Home</Link></li>
-              <li><a href="/#about">About Us</a></li>
-              <li><a href="/#services">Our Services</a></li>
-              <li><a href="/#team">Our Team</a></li>
+              <li><NavLink to="/" spy={true} smooth={true} duration={100} activeClass={"active"}>Home</NavLink></li>
+              <li><a href="/#about" >About Us</a></li>
+              <li><a href="/#services" >Our Services</a></li>
+              <li><a href="/#team" >Our Team</a></li>
+              <li><a href="/#whyChooseUs" >Why Choose Us</a></li>
+              <li><a href="/#contact">Contact</a></li>
               <div className="drop">
 
                 <li><a href="" onClick={handleClick}>Resources{open ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}</a></li>
@@ -43,8 +48,8 @@ const TopBar = () => {
                   </div>
                 </Slide>
               </div>
+              <li><NavLink to="/blogs" activeClassName={"active"}>Blogs</NavLink></li>
 
-              <li><a href="/#contact">Contact</a></li>
             </ul>
           </Slide>
         </div>
@@ -53,8 +58,8 @@ const TopBar = () => {
         </div>
       </div>
     </div>
-
   )
 
 }
+
 export default TopBar

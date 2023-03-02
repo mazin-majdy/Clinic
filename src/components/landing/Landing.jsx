@@ -7,7 +7,6 @@ import NavBar from "../topbar/TopBar";
 const Landing = () => {
   return (
     <>
-      <NavBar />
       <div className="landing">
         <div className="landingcontainer">
           <div className="text">

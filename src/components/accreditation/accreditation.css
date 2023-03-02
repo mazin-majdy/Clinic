@@ -1,0 +1,41 @@
+.accreditation {
+  padding: 100px;
+  background-image: linear-gradient(to right, var(--second-color-o), white, white);
+}
+
+.accreditation .container {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.accreditation ul{
+  font-size: 21px;
+  color: #333;
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+.accreditation li{
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--main-color);
+}
+.accreditation li svg{
+  color: var(--main-color);
+}
+@media (max-width: 992px) {
+  .accreditation {
+    padding: 100px 20px;
+  }
+  .accreditation  ul{
+    flex-basis: 100%;
+    padding: 20px;
+  }
+}
