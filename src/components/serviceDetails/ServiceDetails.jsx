@@ -24,7 +24,7 @@ const ServiceDetails = () => {
   }, []);
 
   return (
-    <>
+    <div ref={topRef}>
       <Navbar />
 
       <div className="servicesDetails" ref={topRef}>
@@ -53,7 +53,7 @@ const ServiceDetails = () => {
           </div>
         </Slide>
       </div>
-    </>
+    </div>
 
   )
 }
