@@ -1,7 +1,6 @@
 import "./landing.css"
 
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
-import NavBar from "../topbar/TopBar";
 
 
 const Landing = () => {
