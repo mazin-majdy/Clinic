@@ -1,13 +1,11 @@
 import "../services/services.css";
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import { serviceText } from "../../data";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 
 const ServicesBox = () => {
-  const navigate = useNavigate();
   if (serviceText.length - 1 % 2 !== 0) {
     serviceText[serviceText.length - 1].class = "last";
 
@@ -29,7 +27,7 @@ const ServicesBox = () => {
           </div>
           <h3>{ele.title}</h3>
           <div className="info">
-            <Link to={`/service/${ele.id}`} onClick={handleClick}>Details</Link>
+            <NavLink to={`/service/${ele.id}`} onClick={handleClick}>Details</NavLink>
           </div>
         </div>
       )
