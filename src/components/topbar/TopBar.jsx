@@ -5,16 +5,18 @@ import { useState } from "react";
 import Slide from 'react-reveal/Slide';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { Link as Page, NavLink } from "react-router-dom";
-import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 const TopBar = () => {
 
   const [open, setOpen] = useState(false);
   const [barOpen, setBarOpen] = useState(false);
+
+
   const handleClick = (e) => {
     e.preventDefault();
     setOpen(!open)
   }
+  
   const barClick = () => {
     setBarOpen(!barOpen)
     console.log(barOpen)

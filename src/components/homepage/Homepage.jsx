@@ -7,12 +7,12 @@ import Footer from '../footer/Footer';
 import Landing from '../landing/Landing'
 import Mission from '../mission/Mission'
 import Services from '../services/Services';
-import NavBar from '../topbar/TopBar'
+import TopBar from '../topbar/TopBar';
 
 const Homepage = () => {
   return (
     <div>
-      <NavBar />
+      <TopBar />
       <Landing />
       <About />
       <Mission />

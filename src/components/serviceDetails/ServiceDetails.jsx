@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../topbar/TopBar";
 import "./serviceDetails.css";
 import { serviceText } from "../../data";
@@ -24,33 +24,37 @@ const ServiceDetails = () => {
   }, []);
 
   return (
-    <div className="servicesDetails" ref={topRef}>
+    <>
       <Navbar />
-      <Slide left>
-        <div className="servicesDetailsContainer">
-          <div className="text">
-            <h1 className="second-title">{param.id + ". " + title}</h1>
-            <p>
-              {text}
-            </p>
-          </div>
 
-          {param.id === '1' ? (
-            <div className="trainingPrograms">
-              <TrainingPrograms id={trainingPrograms[0].id} title={trainingPrograms[0].head} text={trainingPrograms[0].paragraph} />
-              <TrainingPrograms id={trainingPrograms[1].id} title={trainingPrograms[1].head} text={trainingPrograms[1].paragraph} />
-              <TrainingPrograms id={trainingPrograms[2].id} title={trainingPrograms[2].head} text={trainingPrograms[2].paragraph} />
-              <TrainingPrograms id={trainingPrograms[3].id} title={trainingPrograms[3].head} text={trainingPrograms[3].paragraph} />
+      <div className="servicesDetails" ref={topRef}>
+        <Slide left>
+          <div className="servicesDetailsContainer">
+            <div className="text">
+              <h1 className="second-title">{param.id + ". " + title}</h1>
+              <p>
+                {text}
+              </p>
             </div>
-          ) : null
-          }
-          <div className="button">
 
-            <button className="glow-on-hover" type="button" onClick={handleClick}>Back</button>
+            {param.id === '1' ? (
+              <div className="trainingPrograms">
+                <TrainingPrograms id={trainingPrograms[0].id} title={trainingPrograms[0].head} text={trainingPrograms[0].paragraph} />
+                <TrainingPrograms id={trainingPrograms[1].id} title={trainingPrograms[1].head} text={trainingPrograms[1].paragraph} />
+                <TrainingPrograms id={trainingPrograms[2].id} title={trainingPrograms[2].head} text={trainingPrograms[2].paragraph} />
+                <TrainingPrograms id={trainingPrograms[3].id} title={trainingPrograms[3].head} text={trainingPrograms[3].paragraph} />
+              </div>
+            ) : null
+            }
+            <div className="button">
+
+              <button className="glow-on-hover" type="button" onClick={handleClick}>Back</button>
+            </div>
           </div>
-        </div>
-      </Slide>
-    </div>
+        </Slide>
+      </div>
+    </>
+
   )
 }
 
