@@ -23,7 +23,7 @@ const TopBar = () => {
   }
 
   return (
-    <div className='navbar'>
+    <div className='topbar'>
       <div className="container">
         <div className="logo">
           <img src="/assets/logo.png" alt="Logo" />

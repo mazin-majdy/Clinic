@@ -1,7 +1,7 @@
 import "../services/services.css";
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import { serviceText } from "../../data";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 
@@ -27,7 +27,7 @@ const ServicesBox = () => {
           </div>
           <h3>{ele.title}</h3>
           <div className="info">
-            <NavLink to={`/service/${ele.id}`} onClick={handleClick}>Details</NavLink>
+            <Link to={`/services/${ele.id}`} onClick={handleClick}>Details</Link>
           </div>
         </div>
       )

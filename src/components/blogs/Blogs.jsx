@@ -1,12 +1,15 @@
-import React from 'react';
+import './blogs.css';
 import TopBar from "../topbar/TopBar";
 
 const Blogs = () => {
   return (
     <div>
       <TopBar />
-      Blogs
-      
+      <div className="blogs">
+        <h1>Under Construction...</h1>
+
+      </div>
+
     </div>
   )
 }

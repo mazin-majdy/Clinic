@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import Navbar from "../topbar/TopBar";
 import "./serviceDetails.css";
 import { serviceText } from "../../data";
 import { trainingPrograms } from "../../data";
@@ -7,6 +6,7 @@ import TrainingPrograms from "../trainingPrograms/TrainingPrograms";
 import Slide from 'react-reveal/Slide';
 import { useNavigate } from "react-router-dom";
 import { useRef, useEffect } from "react";
+import TopBar from "../topbar/TopBar";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const ServiceDetails = () => {
 
   return (
     <div ref={topRef}>
-      <Navbar />
+      <TopBar />
 
       <div className="servicesDetails" ref={topRef}>
         <Slide left>

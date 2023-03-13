@@ -3,6 +3,7 @@ import Homepage from "./components/homepage/Homepage";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ServiceDetails from "./components/serviceDetails/ServiceDetails";
 import Blogs from "./components/blogs/Blogs";
+import Error from "./components/error/Error";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/service/:id" element={<ServiceDetails />} />
+          <Route path="/services/:id" element={<ServiceDetails />} />
+          <Route path={"*"} element={<Error />} />
         </Routes>
       </BrowserRouter>
     </div>
